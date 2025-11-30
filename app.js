@@ -10,18 +10,17 @@ app.use((req, res, next) => {
   next()
 })
 
-app.get('/api/test', (req, res) => {
+app.get('/test', (req, res) => {
   res.send('Test route is working!')
 })
 
 // Initial page redirecting to Github
-app.get('/api/auth', middleWarez.auth)
+app.get('/auth', middleWarez.auth)
 
 // Callback service parsing the authorization token
 // and asking for the access token
-app.get('/api/callback', middleWarez.callback)
-
-app.get('/api/success', middleWarez.success)
+app.get('/callback', middleWarez.callback)
+app.get('/success', middleWarez.success)
 app.get('/', middleWarez.index)
 
 app.listen(port, () => {
