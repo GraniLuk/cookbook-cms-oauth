@@ -2,6 +2,7 @@ const generateScript = require('./login_script.js')
 
 module.exports = (oauth2, oauthProvider) => {
   function callbackMiddleWare(req, res, next) {
+    console.log('Inside callback middleware');
     const code = req.query.code
     var options = {
       code: code,

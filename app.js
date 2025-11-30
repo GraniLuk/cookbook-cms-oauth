@@ -5,6 +5,11 @@ const port = process.env.PORT || 3000
 
 const app = express()
 
+app.use((req, res, next) => {
+  console.log('Request URL:', req.originalUrl);
+  next();
+});
+
 // Initial page redirecting to Github
 app.get('/auth', middleWarez.auth)
 
