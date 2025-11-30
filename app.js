@@ -10,6 +10,10 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get('/test', (req, res) => {
+  res.send('Test route is working!');
+});
+
 // Initial page redirecting to Github
 app.get('/auth', middleWarez.auth)
 
